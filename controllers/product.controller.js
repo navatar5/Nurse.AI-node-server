@@ -10,7 +10,9 @@ exports.product_create = function (req, res) {
         {
             username: req.body.username,
             date: req.body.date,
-            gluc_level: req.body.gluc_level
+            gluc_level: req.body.gluc_level,
+            meal: req.body.meal,
+            exercise: req.body.exercise
         }
     );
 
@@ -37,7 +39,7 @@ exports.product_update = function (req, res) {
 };
 
 exports.product_findByName = function (req, res) {
-  Product.find({username:'faisal'}, function (err, product) {
+  Product.find({username: req.params.username}, function (err, product) {
       if (err) return next(err);
       res.send(product);
   })

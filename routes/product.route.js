@@ -12,5 +12,5 @@ router.post('/create', product_controller.product_create);
 //
 router.put('/:id/update', product_controller.product_update);
 
-router.get('/findByName', product_controller.product_findByName)
+router.get('/findByName/:username', product_controller.product_findByName)
 module.exports = router;
