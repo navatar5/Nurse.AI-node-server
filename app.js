@@ -23,7 +23,7 @@ var options = {
 const mongoose = require('mongoose');
 let dev_db_url = 'mongodb+srv://pranesh94:abcd1234@cluster0-frs5l.mongodb.net/test?retryWrites=true&w=majority';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
-let mongoDB = dev_db_url;
+//let mongoDB = dev_db_url;
 mongoose.connect(mongoDB, options, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
