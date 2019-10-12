@@ -1,5 +1,6 @@
 debugger
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const product = require('./routes/product.route'); // Imports routes for the products
@@ -17,6 +18,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //
  app.use(bodyParser.json());
  app.use(bodyParser.urlencoded({extended: false}));
+ app.use(cors())
 
 app.use('/products', product);
 
