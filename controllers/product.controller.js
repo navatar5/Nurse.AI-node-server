@@ -34,3 +34,12 @@ exports.product_update = function (req, res) {
         res.send('Product udpated.');
     });
 };
+
+exports.alldata = function (req, res) {
+  res.send('Here is all the data.');
+  Product.find({}, function(err, products) {
+    res.send(products)
+  });
+
+
+};
