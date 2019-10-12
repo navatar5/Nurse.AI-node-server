@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let ProductSchema = new Schema({
-    name: {type: String, required: true, max: 100},
-    price: {type: Number, required: true},
+    username: {type: String, required: false, max: 100},
+    date: {type: Date, required: false},
+    gluc_level: {type: Number, required: false},
 });
 
 

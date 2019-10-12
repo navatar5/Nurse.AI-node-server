@@ -8,8 +8,9 @@ exports.test = function (req, res) {
 exports.product_create = function (req, res) {
     let product = new Product(
         {
-            name: req.body.name,
-            price: req.body.price
+            username: req.body.username,
+            date: req.body.date,
+            gluc_level: req.body.gluc_level
         }
     );
 
@@ -21,7 +22,7 @@ exports.product_create = function (req, res) {
     })
 };
 
-exports.product_details = function (req, res) {
+exports.product_findByID = function (req, res) {
     Product.findById(req.params.id, function (err, product) {
         if (err) return next(err);
         res.send(product);
@@ -35,11 +36,9 @@ exports.product_update = function (req, res) {
     });
 };
 
-exports.alldata = function (req, res) {
-  res.send('Here is all the data.');
-  Product.find({}, function(err, products) {
-    res.send(products)
-  });
-
-
+exports.product_findByName = function (req, res) {
+  Product.find({username:'faisal'}, function (err, product) {
+      if (err) return next(err);
+      res.send(product);
+  })
 };
