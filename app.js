@@ -9,10 +9,15 @@ const app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-let dev_db_url = 'mongodb+srv://pranesh94:abcd1234@cluster0-frs5l.mongodb.net/test?retryWrites=true&w=majority';
-let mongoDB = process.env.MONGODB_URI || dev_db_url;
+// let dev_db_url = 'mongodb+srv://pranesh94:abcd1234@cluster0-frs5l.mongodb.net/test?retryWrites=true&w=majority';
+let dev_db_url = 'mongodb://admin-nurse-ai:b8Mv9ML!gtv3YQh@ds333238.mlab.com:33238/nurseai';
+
+//mongoose.connect('mongodb://admin-nurse-ai:b8Mv9ML!gtv3YQh@ds333238.mlab.com:33238/nurseai',  {useNewUrlParser: true, useFindAndModify: false } );
+let mongoDB =  dev_db_url;
 //let mongoDB = dev_db_url;
-mongoose.connect(mongoDB, { useUnifiedTopology: true }, { useNewUrlParser: true });
+//mongoose.connect(mongoDB, { useUnifiedTopology: true }, { useNewUrlParser: true });
+
+mongoose.connect(mongoDB, {useNewUrlParser: true, useFindAndModify: false });
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
