@@ -6,7 +6,9 @@ let ProductSchema = new Schema({
     date: {type: Date, required: false},
     gluc_level: {type: Number, required: false},
     meal: {type: String, required: false},
-    exercise: {type: Number, required: false}
+    exercise: {type: String, required: false},
+    insulin: {type: String, required: false},
+    medication: {type: String, required: false}
 });
 
 

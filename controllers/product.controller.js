@@ -12,7 +12,9 @@ exports.product_create = function (req, res) {
             date: req.body.date,
             gluc_level: req.body.gluc_level,
             meal: req.body.meal,
-            exercise: req.body.exercise
+            exercise: req.body.exercise,
+            insulin: req.body.insulin,
+            medication: req.body.medication
         }
     );
 
